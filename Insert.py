@@ -1,7 +1,5 @@
 import cls , SQL_Q
-def Insert(db , cursor , os):
-    pid , company , model , desc , colour , type , name = ''
-    price , pieces , size = 0
+def Insert(db , cursor):
     print("Tables: ")
     print("1. AC")
     print("2. Fridges")
@@ -23,13 +21,13 @@ def Insert(db , cursor , os):
             price = float(input("Price : "))
             pieces = int(input("Pieces : "))
             colour = input("Colour : ")
-            data = (pid , company , model , desc , price , pieces , colour)
             try:
-                cursor.execute(SQL_Q.IAC, data)
+                cursor.execute(SQL_Q.IAC.format(pid , company , model , desc , price , pieces , colour))
                 db.commit()
-                print(cursor.rowcount(), "row(s) inserted successfuly into table AC")
+                print("1 row inserted successfuly into table AC")
             except:
                 db.rollback()
+                print("Error in inserting row(s) to table")
         elif a == 2:
             b = int(input("Enter number of rows to be inserted into table AC : "))
             cls.clr()
@@ -41,13 +39,15 @@ def Insert(db , cursor , os):
                 price = float(input("Price : "))
                 pieces = int(input("Pieces : "))
                 colour = input("Colour : ")
-                data = (pid, company, model, desc, price, pieces, colour)
                 try:
-                    cursor.execute(SQL_Q.IAC, data)
+                    cursor.execute(SQL_Q.IAC.format(pid, company, model, desc, price, pieces, colour))
                     db.commit()
-                    print(cursor.rowcount(), "row(s) inserted successfuly into table AC")
                 except:
                     db.rollback()
+                    print("Error in inserting row(s) into table")
+                    break
+            else:
+                print(b , "row(s) inserted successfully into table AC")
         else:
             print("Wrong Option....... Exiting")
     elif opt == 2:
@@ -63,13 +63,13 @@ def Insert(db , cursor , os):
             price = float(input("Price : "))
             pieces = int(input("Pieces : "))
             colour = input("Colour : ")
-            data = (pid, company, model, desc, price, pieces, colour)
             try:
-                cursor.execute(SQL_Q.IFR, data)
+                cursor.execute(SQL_Q.IFR.format(pid, company, model, desc, price, pieces, colour))
                 db.commit()
-                print(cursor.rowcount(), "row(s) inserted successfuly into table FRIDGES")
+                print("1 row inserted successfuly into table FRIDGES")
             except:
                 db.rollback()
+                print("Error in inserting row(s) to table")
 
         elif a == 2:
             b = int(input("Enter the number of rows to be inserted into table FRIDGES : "))
@@ -82,13 +82,15 @@ def Insert(db , cursor , os):
                 price = float(input("Price : "))
                 pieces = int(input("Pieces : "))
                 colour = input("Colour : ")
-                data = (pid, company, model, desc, price, pieces, colour)
                 try:
-                    cursor.execute(SQL_Q.IFR, data)
+                    cursor.execute(SQL_Q.IFR.format(pid, company, model, desc, price, pieces, colour))
                     db.commit()
-                    print(cursor.rowcount(), "row(s) inserted successfuly into table FRIDGES")
                 except:
                     db.rollback()
+                    print("Error in inserting row(s) to table")
+                    break
+            else:
+                print(b , 'row(s) inserted successfully into table FRIDGES')
         else:
             print("Wrong Option....... Exiting")
     elif opt == 3:
@@ -103,13 +105,13 @@ def Insert(db , cursor , os):
             name = input("Name : ")
             price = float(input("Price : "))
             pieces = int(input("Pieces : "))
-            data = (pid , type , company , name , price , pieces)
             try:
-                cursor.execute(SQL_Q.IKA, data)
+                cursor.execute(SQL_Q.IKA.format(pid , type , company , name , price , pieces))
                 db.commit()
-                print(cursor.rowcount(), "row(s) inserted successfuly into table K_APPS")
+                print("1 row inserted successfuly into table K_APPS")
             except:
                 db.rollback()
+                print("Error in inserting row(s) to table")
         elif a == 2:
             b = int(input("Enter the number of rows to be inserted into table K_APPS : "))
             cls.clr()
@@ -120,13 +122,15 @@ def Insert(db , cursor , os):
                 name = input("Name : ")
                 price = float(input("Price : "))
                 pieces = int(input("Pieces : "))
-                data = (pid, type, company, name, price, pieces)
                 try:
-                    cursor.execute(SQL_Q.IKA, data)
+                    cursor.execute(SQL_Q.IKA.format(pid, type, company, name, price, pieces))
                     db.commit()
-                    print(cursor.rowcount(), "row(s) inserted successfuly into table K_APPS")
                 except:
                     db.rollback()
+                    print("Error in inserting row(s) to table")
+                    break
+            else:
+                print(b , "row(s) inserted into table K_APPS")
         else:
             print("Wrong Option........ Exiting")
     elif opt == 4:
@@ -142,30 +146,33 @@ def Insert(db , cursor , os):
             price = float(input("Price : "))
             pieces = int(input("Pieces : "))
             size = int(input("Size : "))
-            data = (pid , company , name , size , price , pieces , desc)
             try:
-                cursor.execute(SQL_Q.ITV, data)
+                cursor.execute(SQL_Q.ITV.format(pid , company , name , size , price , pieces , desc))
                 db.commit()
-                print(cursor.rowcount(), "row(s) inserted successfuly into table TV")
+                print("1 row inserted successfuly into table TV")
             except:
                 db.rollback()
+                print("Error in inserting row(s) to table")
         elif a == 2:
             b = int(input("Enter the number of rows to be inserted into table TV : "))
             cls.clr()
-            pid = input("Product_ID : ")
-            company = input(("Company : "))
-            name = input("Name : ")
-            desc = input("Description : ")
-            price = float(input("Price : "))
-            pieces = int(input("Pieces : "))
-            size = int(input("Size : "))
-            data = (pid, company, name, size, price, pieces, desc)
-            try:
-                cursor.execute(SQL_Q.ITV, data)
-                db.commit()
-                print(cursor.rowcount(), "row(s) inserted successfuly into table TV")
-            except:
-                db.rollback()
+            for i in range(0 , b):
+                pid = input("Product_ID : ")
+                company = input(("Company : "))
+                name = input("Name : ")
+                desc = input("Description : ")
+                price = float(input("Price : "))
+                pieces = int(input("Pieces : "))
+                size = int(input("Size : "))
+                try:
+                    cursor.execute(SQL_Q.ITV.format(pid, company, name, size, price, pieces, desc))
+                    db.commit()
+                except:
+                    db.rollback()
+                    print("Error in inserting row(s) to table")
+                    break
+            else:
+                print(b , "row(s) inserted successfully into table TV")
         else:
             print("Wrong Option....... Exiting")
     elif opt == 5:
@@ -182,31 +189,34 @@ def Insert(db , cursor , os):
             pieces = int(input("Pieces : "))
             colour = input("Colour : ")
             type = input("Type : ")
-            data = (pid , company , model , desc , price , type , pieces , colour)
             try:
-                cursor.execute(SQL_Q.IWS, data)
+                cursor.execute(SQL_Q.IWS.format(pid , company , model , desc , price , type , pieces , colour))
                 db.commit()
-                print(cursor.rowcount(), "row(s) inserted successfuly into table WSH_MCH")
+                print("1 row inserted successfuly into table WSH_MCH")
             except:
                 db.rollback()
+                print("Error in inserting row(s) to table")
         elif a == 2:
             b = int(input("Enter the number of rows to be inserted into table WSH_MCH : "))
             cls.clr()
-            pid = input("Product_ID : ")
-            company = input(("Company : "))
-            model = input("Model : ")
-            desc = input("Description : ")
-            price = float(input("Price : "))
-            pieces = int(input("Pieces : "))
-            colour = input("Colour : ")
-            type = input("Type : ")
-            data = (pid, company, model, desc, price, type, pieces, colour)
-            try:
-                cursor.execute(SQL_Q.IWS, data)
-                db.commit()
-                print(cursor.rowcount(), "row(s) inserted successfuly into table WSH_MCH")
-            except:
-                db.rollback()
+            for i in range(0 , b):
+                pid = input("Product_ID : ")
+                company = input(("Company : "))
+                model = input("Model : ")
+                desc = input("Description : ")
+                price = float(input("Price : "))
+                pieces = int(input("Pieces : "))
+                colour = input("Colour : ")
+                type = input("Type : ")
+                try:
+                    cursor.execute(SQL_Q.IWS.format(pid, company, model, desc, price, type, pieces, colour))
+                    db.commit()
+                except:
+                    db.rollback()
+                    print("Error in inserting row(s) to table")
+                    break
+            else:
+                print(b , "rows inserted successfully into table WSH_MCH")
         else:
             print("Wrong Option....... Exiting")
     else:

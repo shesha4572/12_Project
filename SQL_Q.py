@@ -1,5 +1,5 @@
-IAC = 'INSERT INTO AC (Product_ID , Company , Model , Description , Price , Pieces , Colour) VALUES (%s , %s , %s , %s , %s , %s , %s);'
-IFR = 'INSERT INTO FRIDGES (Product_ID , Company , Model , Description , Price , Pieces , Colour) VALUES (%s , %s , %s , %s , %s , %s , %s);'
-IKA = 'INSERT INTO K_APPS (Product_ID , Type , Company , Name , Price , Pieces) VALUES (%s , %s , %s , %s , %s , %s);'
-ITV = 'INSERT INTO TV (Product_ID , Company , Name , Size , Price , Pieces , Description) VALUES (%s , %s , %s , %s , %s , %s , %s);'
-IWS = 'INSERT INTO WSH_MCH (Product_ID , Company , Model , Description , Price , Type , Pieces , Colour) VALUES (%s , %s , %s , %s , %s , %s , %s , %s);'
+IAC = "INSERT INTO AC VALUES ('{}' , '{}' , '{}' , '{}' , {} , {} , '{}');"
+IFR = "INSERT INTO FRIDGES VALUES ('{}' , '{}' , '{}' , '{}' , {} , {} , '{}');"
+IKA = "INSERT INTO K_APPS VALUES ('{}' , '{}' , '{}' , '{}' , {} , {});"
+ITV = "INSERT INTO TV VALUES ('{}' , '{}' , '{}' , {} , {} , {} , '{}');"
+IWS = "INSERT INTO WSH_MCH VALUES ('{}' , '{}' , '{}' , '{}' , {} , '{}' , {} , '{}');"
