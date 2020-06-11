@@ -1,4 +1,4 @@
-import ConnectDB , Insert
+import ConnectDB , Insert , CheckInv
 db , cursor = ConnectDB.connect()
 cursor.execute("USE Project;")
-Insert.Insert(db , cursor)
+CheckInv.CheckInv(db , cursor)
