@@ -522,15 +522,6 @@ multiline_formats = {
     "rst": "rst",
 }
 
-# TODO: Add multiline support for the remaining table formats:
-#       - mediawiki: Replace \n with <br>
-#       - moinmoin: TBD
-#       - youtrack: TBD
-#       - html: Replace \n with <br>
-#       - latex*: Use "makecell" package: In header, replace X\nY with
-#         \thead{X\\Y} and in data row, replace X\nY with \makecell{X\\Y}
-#       - tsv: TBD
-#       - textile: Replace \n with <br/> (must be well-formed XML)
 
 _multiline_codes = re.compile(r"\r|\n|\r\n")
 _multiline_codes_bytes = re.compile(b"\r|\n|\r\n")
@@ -816,7 +807,7 @@ def _align_column(
 
     s_widths = list(map(width_fn, strings))
     maxwidth = max(max(s_widths), minwidth)
-    # TODO: refactor column alignment in single-line and multiline modes
+
     if is_multiline:
         if not enable_widechars and not has_invisible:
             padded_strings = [
