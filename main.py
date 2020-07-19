@@ -1,11 +1,13 @@
-import ConnectDB , Insert , CheckInv , CreateInvoice , getpass
+import ConnectDB , Insert , CheckInv , CreateInvoice , getpass , cls
 print("----------------Login--------------------")
 usr_name = input("Username : ")
 passwd = getpass.getpass()
 db , cursor = ConnectDB.connect(usr_name , passwd)
+cursor.execute("USE Project;")
 if db == 0 or cursor == 0:
     print("Invalid username or password!!!")
 else:
+    cls.clr()
     print("1. Insert values into database : ")
     print("2. Check inventory for items : ")
     print("3. Create Invoice : ")

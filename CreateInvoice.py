@@ -71,9 +71,12 @@ def Invoice(cursor):
             check = False
     while check:
         cls.clr()
-        print("Invoice:")
+        f = open("invoice.txt" , "w")
+        f.write("Invoice:")
+        f.write("\n")
         final_items.insert(0 , ["Company" , "Model" , "Price" , "Quantity" , "Colour"])
-        print(tabulate.tabulate(final_items , headers = "firstrow" , tablefmt = "pretty"))
+        f.writelines(tabulate.tabulate(final_items , headers = "firstrow" , tablefmt = "pretty"))
+        f.write("\n")
         price_t = [["Total Price", tot_price]]
-        print(tabulate.tabulate(price_t , tablefmt = "pretty"))
+        f.writelines(tabulate.tabulate(price_t , tablefmt = "pretty"))
         check = False
