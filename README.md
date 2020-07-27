@@ -43,9 +43,10 @@
 
 ### Built With
 
-* [PyCharm]()
-* [DataGrip]()
-* [MySql]()
+* [PyCharm](https://www.jetbrains.com/pycharm/)
+* [DataGrip](https://www.jetbrains.com/datagrip/)
+* [MySql](https://www.mysql.com)
+* [Python](https://www.python.org)
 
 
 
