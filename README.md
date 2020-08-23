@@ -43,9 +43,10 @@
 
 ### Built With
 
-* [PyCharm]()
-* [DataGrip]()
-* [MySql]()
+* [PyCharm](https://www.jetbrains.com/pycharm/)
+* [DataGrip](https://www.jetbrains.com/datagrip/)
+* [MySql](https://www.mysql.com)
+* [Python](https://www.python.org)
 
 
 
@@ -105,7 +106,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Your Name – shesha4572@gmail.com
+Your Name – Sheshasai Reddy
 
 Project Link: [https://github.com/shesha4572/12_Project](https://github.com/shesha4572/12_Project)
 
@@ -114,7 +115,7 @@ Project Link: [https://github.com/shesha4572/12_Project](https://github.com/shes
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+* [**@gregbanks** for tabulate.py ](https://github.com/gregbanks/python-tabulate)
+* [**@othnieldrew** for template of readme](https://github.com/othneildrew/Best-README-Template)
+
 
