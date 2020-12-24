@@ -32,7 +32,6 @@
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -45,7 +44,7 @@
 
 * [PyCharm](https://www.jetbrains.com/pycharm/)
 * [DataGrip](https://www.jetbrains.com/datagrip/)
-* [MySql](https://www.mysql.com)
+* [MySQL](https://www.mysql.com)
 * [Python](https://www.python.org)
 
 
@@ -59,7 +58,7 @@ To get a local copy up and running follow these simple steps.
 
 1. A Computer running at least a 32-bit Operating System
 2. Python 3.0 or higher preinstalled
-3. A running MySql Client
+3. A running MySQL Client
 
 
 ### Installation
@@ -73,15 +72,25 @@ git clone https://github.com/shesha4572/12_Project.git
 mysqladmin -u  -p create mytestdatabase
 mysql -u [user] -p [database_name] < [filename].sql
 ```
+3. Make sure you have **mysql-connector** for python installed. If not run this command in Terminal or Command Prompt.
+```sh
+pip3 install mysql-connector-python
+```
+
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+1. To run the program open Terminal or Command Prompt in the **12_Project** folder and use the command
+```sh
+python3 main.py
+```
+2. Enter the username and password
+<img src = https://github.com/shesha4572/12_Project/blob/master/src/2.png>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+3. Select the preferred option 
+<img src = https://github.com/shesha4572/12_Project/blob/master/src/3.png>
 
 
 
