@@ -24,3 +24,8 @@ PFR = "SELECT Company , Model , Price , Colour FROM FRIDGES WHERE Product_ID LIK
 PKA = "SELECT Company , Name , Price FROM K_APPS WHERE Product_ID LIKE '{}';"
 PTV = "SELECT Company , Name , Price FROM TV WHERE Product_ID LIKE '{}';"
 PWS = "SELECT Company , Model , Price , Colour FROM WSH_MCH WHERE Product_ID LIKE '{}';"
+UAC = "UPDATE AC SET Pieces = Pieces - {} WHERE Product_ID LIKE '{}';"
+UFR = "UPDATE FRIDGES SET Pieces = Pieces - {} WHERE Product_ID LIKE '{}';"
+UKA = "UPDATE K_APPS SET Pieces = Pieces - {} WHERE Product_ID LIKE '{}';"
+UTV = "UPDATE TV SET Pieces = Pieces - } WHERE Product_ID LIKE '{}';"
+UWS = "UPDATE WSH_MCH SET Pieces = Pieces - {} WHERE Product_ID LIKE '{}';"

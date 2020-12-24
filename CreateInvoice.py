@@ -1,5 +1,5 @@
 import cls , SQL_Q , tabulate
-def Invoice(cursor):
+def Invoice(db , cursor):
     lst_pid = []
     lst_qty = []
     final_items = []
@@ -21,8 +21,10 @@ def Invoice(cursor):
                 result.insert(3, lst_qty[lst_pid.index(i)])
                 final_items.append(result)
                 tot_price += float(result[2]) * lst_qty[lst_pid.index(i)]
+                cursor.execute(SQL_Q.UAC.format(lst_qty[lst_pid.index(i)], i))
+                db.commit()
             except:
-                print("Entered Product ID is not available in database")
+                print("Entered Product ID", i , "is not available in database")
                 check = False
         elif i[0] == "F":
             try:
@@ -31,8 +33,9 @@ def Invoice(cursor):
                 result.insert(3, lst_qty[lst_pid.index(i)])
                 final_items.append(result)
                 tot_price += float(result[2]) * lst_qty[lst_pid.index(i)]
+                cursor.execute(SQL_Q.UFR.format(lst_qty[lst_pid.index(i)], i))
             except:
-                print("Entered Product ID is not available in database")
+                print("Entered Product ID", i , "is not available in database")
                 check = False
         elif i[0] == "K":
             try:
@@ -42,8 +45,9 @@ def Invoice(cursor):
                 result.insert(3, lst_qty[lst_pid.index(i)])
                 final_items.append(result)
                 tot_price += float(result[2]) * lst_qty[lst_pid.index(i)]
+                cursor.execute(SQL_Q.UKA.format(lst_qty[lst_pid.index(i)], i))
             except:
-                print("Entered Product ID is not available in database")
+                print("Entered Product ID", i[0] , "is not available in database")
                 check = False
         elif i[0] == "T":
             try:
@@ -53,21 +57,23 @@ def Invoice(cursor):
                 result.insert(3, lst_qty[lst_pid.index(i)])
                 final_items.append(result)
                 tot_price += float(result[2]) * lst_qty[lst_pid.index(i)]
+                cursor.execute(SQL_Q.UTV.format(lst_qty[lst_pid.index(i)], i))
             except:
-                print("Entered Product ID is not available in database")
+                print("Entered Product ID", i , "is not available in database")
                 check = False
         elif i[0] == "W":
             try:
-                cursor.execute(SQL_Q.PKA.format(i))
+                cursor.execute(SQL_Q.PWS.format(i))
                 result = list(cursor.fetchone())
                 result.insert(3, lst_qty[lst_pid.index(i)])
                 final_items.append(result)
                 tot_price += float(result[2]) * lst_qty[lst_pid.index(i)]
+                cursor.execute(SQL_Q.UWS.format(lst_qty[lst_pid.index(i)], i))
             except:
-                print("Entered Product ID is not available in database")
+                print("Entered Product ID", i , "is not available in database")
                 check = False
         else:
-            print("Entered Product ID is not available in database")
+            print("Entered Product ID", i , "is not available in database")
             check = False
     while check:
         cls.clr()

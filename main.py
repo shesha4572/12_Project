@@ -18,7 +18,7 @@ else:
     elif opt == 2:
         CheckInv.CheckInv(cursor)
     elif opt == 3:
-        CreateInvoice.Invoice(cursor)
+        CreateInvoice.Invoice(db , cursor)
     else:
         print("Wrong Option....... Exiting")
         ConnectDB.disconnect(db)
